@@ -9,7 +9,7 @@ export default function Do(props) {
                 <span className="do-text">{props.doText}</span>
                 <div className="cb-icons">
                     <div className="icon-div cb"><FontAwesomeIcon icon={faPen} size="xs" /></div>
-                    <div className="icon-div cb"><FontAwesomeIcon icon={faCheck} size="xs" /></div>
+                    <div className="icon-div cb" onClick={props.handleDeleteDo}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
                 </div>
             </div>
         </div>

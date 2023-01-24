@@ -9,11 +9,14 @@ import DescribeValue from "./DescribeValue"
 import Do from "./Do"
 
 
+
 export default function Value(props) {
 
 
     const doElements = props.doList.map(each => <Do
-        doText={each}/>)
+        doText={each}
+        handleDeleteDo={() => props.handleDeleteDo(props.name, each)}
+        key={each} />)
 
     return (
         <>
@@ -21,7 +24,7 @@ export default function Value(props) {
             <div className="value-box-content">
                 <span className="value-box-text">{props.name}</span>
                 <div className="value-box-icons">
-                    <div className="icon-div value-box"><FontAwesomeIcon icon={faXmark} size="xs"/></div>
+                    <div className="icon-div value-box" onClick={props.handleDeleteValue}><FontAwesomeIcon icon={faXmark} size="xs"/></div>
                     <div className="icon-div value-box" onClick={props.handleExpandContent}><FontAwesomeIcon icon={props.valueExpanded ? faAngleUp : faAngleDown} size="xs"/></div>
                 </div>
             </div>

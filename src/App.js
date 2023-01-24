@@ -37,6 +37,20 @@ function App() {
     })
   }
 
+  function handleDeleteDo(valueName, doText) {
+    console.log(valueName)
+    console.log(doText)
+    setDoValues(prevDoValues => prevDoValues.map(each => {
+      return each.name === valueName ? { ...each, doList: each.doList.filter(doItem => doItem !== doText) } : each
+    })
+    )
+  }
+
+  function handleDeleteValue(id) {
+    setDoValues(prevDoValues => prevDoValues.filter(each => each.id !== id)
+    )
+  }
+
 
   const valueElements = doValues.map(each => <Value
     name={each.name}
@@ -45,7 +59,9 @@ function App() {
     valueDescription={each.valueDescription}
     doAdded={each.doAdded}
     doList={each.doList}
-    handleExpandContent={()=>handleExpandContent(each.id)}
+    handleExpandContent={() => handleExpandContent(each.id)}
+    handleDeleteValue={() => handleDeleteValue(each.id)}
+    handleDeleteDo={handleDeleteDo}
     key={each.id}
   />
   )
