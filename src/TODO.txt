@@ -1,0 +1,3 @@
+- add delete functionality to value box
+- add delete functionality to do box
+- create styling for add child box
