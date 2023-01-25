@@ -6,8 +6,10 @@ export let doValuesData = [
   valueExpanded: true,
   valueDescribed: true,
   valueDescription: "spend quality time with loved ones. talk about what matters",
+  describeValueInputActive: false,
+    addDoInputActive: false,
   doAdded: true, 
-    doList: ["have dinner with tim"],
+  doList: ["have dinner with tim"],
   id: nanoid()
 },
 {
@@ -15,6 +17,8 @@ export let doValuesData = [
   valueExpanded: false,
   valueDescribed: false,
   valueDescription: "",
+  describeValueInputActive: false,
+  addDoInputActive: false,
   doAdded: false, 
     doList: [],
   id: nanoid()
@@ -24,6 +28,8 @@ export let doValuesData = [
   valueExpanded: false,
   valueDescribed: false,
   valueDescription: "",
+  describeValueInputActive: false,
+  addDoInputActive: false,
   doAdded: true, 
     doList: ["aaa", "bbb", "ccc"],
   id: nanoid()

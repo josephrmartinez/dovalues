@@ -7,12 +7,14 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons"
 import { faPen } from "@fortawesome/free-solid-svg-icons"
 import DescribeValue from "./DescribeValue"
 import Do from "./Do"
+import ValueDescribed from "./ValueDescribed"
+import DescribeValueInput from "./DescribeValueInput"
+import AddDoInput from "./AddDoInput"
+import AddDoButton from "./AddDoButton"
 
 
 
 export default function Value(props) {
-
-
     const doElements = props.doList.map(each => <Do
         doText={each}
         handleDeleteDo={() => props.handleDeleteDo(props.name, each)}
@@ -30,29 +32,17 @@ export default function Value(props) {
             </div>
         </div>
             {props.valueExpanded && <div className="child-boxes">
-                {!props.valueDescribed && <DescribeValue />}
-                {props.valueDescribed &&
-                    <div className="cb bg-white">
-                    <div className="content">
-                        <span className="value-description">{props.valueDescription}</span>
-                        <div className="cb-icons">
-                            <div className="icon-div cb"><FontAwesomeIcon icon={faPen} size="xs" /></div>
-                        </div>
-                    </div>
-                    </div>
-                }
-                {props.doAdded && doElements}
-                <div className="cb bg-blue">
-                    <span>ADD DO</span>
-                </div>
-            </div>}
-    </>
-    )
-}
+                
+                {props.valueDescribed && <ValueDescribed valueDescription={props.valueDescription} />}
 
-// name="connection"
-//           valueExpanded={true}
-//           valueDescribed={true}
-//           valueDescription="spend quality time with loved ones. talk about what matters"
-//           doAdded={true} 
-//           doList={["have dinner with tim", "write letter to marina"]}/>
+                {!props.valueDescribed && !props.describeValueInputActive && <DescribeValue handleDescribeValueButtonClick={props.handleDescribeValueButtonClick} />}
+                {!props.valueDescribed && props.describeValueInputActive && <DescribeValueInput handleDescribeValueEnter={props.handleDescribeValueEnter} />} 
+                
+
+                {props.doAdded && doElements}
+                {props.addDoInputActive && <AddDoInput handleAddDoEnter={props.handleAddDoEnter} />}
+                {!props.addDoInputActive && <AddDoButton handleAddDoButtonClick={props.handleAddDoButtonClick} />}
+            </div>}
+        </>
+        )
+}

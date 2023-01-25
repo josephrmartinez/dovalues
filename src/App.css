@@ -84,6 +84,7 @@ main{
   width: 18px;
   height: 18px;
   border-radius: 2px;
+  color: black;
 }
 
 
@@ -162,3 +163,16 @@ main{
   gap: 10px;
 }
 
+.bg-blue-input{
+  border: 1px solid var(--main-wht-color);
+  background-color: var(--main-bg-color);
+  height: 2em;
+  color: var(--main-wht-color);
+  font-family: 'GFS Neohellenic', sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.bg-blue-input:focus{
+  outline: 1.75px solid var(--main-wht-color)
+}

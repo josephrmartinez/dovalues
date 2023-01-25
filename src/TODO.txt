@@ -1,3 +1,8 @@
-- add delete functionality to value box
-- add delete functionality to do box
-- create styling for add child box
+
+- create add do functionality
+
+
+- create edit do functionality
+- create describe value functionality
+- create edit value functionality
+- create add value screen and functionality
