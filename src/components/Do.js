@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faXmark } from "@fortawesome/free-solid-svg-icons"
 import { faPen } from "@fortawesome/free-solid-svg-icons"
 
 export default function Do(props) {
@@ -9,7 +9,7 @@ export default function Do(props) {
                 <span className="do-text">{props.doText}</span>
                 <div className="cb-icons">
                     <div className="icon-div cb"><FontAwesomeIcon icon={faPen} size="xs" /></div>
-                    <div className="icon-div cb" onClick={props.handleDeleteDo}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
+                    <div className="icon-div cb" onClick={props.handleDeleteDo}><FontAwesomeIcon icon={faXmark} size="xs" /></div>
                 </div>
             </div>
         </div>

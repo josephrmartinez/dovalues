@@ -33,10 +33,10 @@ export default function Value(props) {
         </div>
             {props.valueExpanded && <div className="child-boxes">
                 
-                {props.valueDescribed && <ValueDescribed valueDescription={props.valueDescription} />}
+                {props.valueDescribed && !props.describeValueInputActive && <ValueDescribed handleDescribeValueButtonClick={props.handleDescribeValueButtonClick} valueDescription={props.valueDescription} />}
 
                 {!props.valueDescribed && !props.describeValueInputActive && <DescribeValue handleDescribeValueButtonClick={props.handleDescribeValueButtonClick} />}
-                {!props.valueDescribed && props.describeValueInputActive && <DescribeValueInput handleDescribeValueEnter={props.handleDescribeValueEnter} />} 
+                {props.describeValueInputActive && <DescribeValueInput valueDescription={props.valueDescription} valueId={props.id} handleDescribeValueEnter={props.handleDescribeValueEnter} handleDescribeValueInputChange={props.handleDescribeValueInputChange} />} 
                 
 
                 {props.doAdded && doElements}

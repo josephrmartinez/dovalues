@@ -67,9 +67,16 @@ function App() {
     )
   }
 
-  function handleDescribeValueEnter(valueId) {
+  function handleDescribeValueEnter(valueId, inputText) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive} : each
+      return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive, valueDescribed: true} : each
+    })
+    )
+  }
+
+  function handleDescribeValueInputChange(event) {
+    setDoValues(prevDoValues => prevDoValues.map(each => {
+      return each.id === event.target.name ? { ...each, valueDescription: event.target.value} : each
     })
     )
   }
@@ -98,7 +105,8 @@ function App() {
     handleAddDoButtonClick={() => handleAddDoButtonClick(each.id)}
     handleAddDoEnter={() => handleAddDoEnter(each.id)}
     handleDescribeValueButtonClick={() => handleDescribeValueButtonClick(each.id)}
-    handleDescribeValueEnter={() => handleDescribeValueEnter(each.id)}
+    handleDescribeValueEnter={handleDescribeValueEnter}
+    handleDescribeValueInputChange = {handleDescribeValueInputChange}
     id={each.id}
     key={each.id}
   />
