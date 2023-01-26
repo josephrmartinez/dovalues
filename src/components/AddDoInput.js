@@ -9,7 +9,8 @@ export default function AddDoInput(props) {
                         type="text"
                         onChange={props.handleAddDoInputChange}
                         name={props.valueId}
-                        value={props.doAdding}/>
+                    value={props.doAdding}
+                autoFocus/>
             <div className="cb-icons">
                 <div className="icon-div cb" onClick={() => props.handleAddDoEnter(props.valueId)}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
             </div>

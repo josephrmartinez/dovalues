@@ -1,5 +1,6 @@
-- bebug edit do functionality
+- update input fields to have enterClick functionality
 - create add value screen and functionality
+- link up local storage
 
 
 Code review:

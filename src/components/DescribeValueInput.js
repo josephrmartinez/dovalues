@@ -10,7 +10,8 @@ export default function DescribeValueInput(props) {
                     type="text"
                     onChange={props.handleDescribeValueInputChange}
                     name={props.valueId}
-                    value={props.valueDescription} />
+                    value={props.valueDescription}
+                autoFocus/>
             <div className="cb-icons" onClick={() => props.handleDescribeValueEnter(props.valueId, props.valueDescription)}>
                 <div className="icon-div cb"><FontAwesomeIcon icon={faCheck} size="xs" /></div>
             </div>
