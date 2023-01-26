@@ -11,14 +11,22 @@ import ValueDescribed from "./ValueDescribed"
 import DescribeValueInput from "./DescribeValueInput"
 import AddDoInput from "./AddDoInput"
 import AddDoButton from "./AddDoButton"
+import { nanoid } from "nanoid"
 
 
 
 export default function Value(props) {
+
     const doElements = props.doList.map(each => <Do
-        doText={each}
-        handleDeleteDo={() => props.handleDeleteDo(props.name, each)}
-        key={each} />)
+        doText={each.text}
+        doTextActive={each.doTextActive}
+        handleDeleteDo={() => props.handleDeleteDo(props.name, each.text)}
+        handleEditDoToggle={props.handleEditDoToggle}
+        handleEditDoInputChange={props.handleEditDoInputChange}
+        parentValue={props.name}
+        valueId={props.id}
+        doId={each.id}
+        key={nanoid()} />)
 
     return (
         <>
@@ -40,7 +48,7 @@ export default function Value(props) {
                 
 
                 {props.doAdded && doElements}
-                {props.addDoInputActive && <AddDoInput handleAddDoEnter={props.handleAddDoEnter} />}
+                {props.addDoInputActive && <AddDoInput valueId={props.id} doAdding={props.doAdding} handleAddDoInputChange={props.handleAddDoInputChange} handleAddDoEnter={props.handleAddDoEnter} />}
                 {!props.addDoInputActive && <AddDoButton handleAddDoButtonClick={props.handleAddDoButtonClick} />}
             </div>}
         </>

@@ -8,9 +8,11 @@ export let doValuesData = [
   valueDescription: "spend quality time with loved ones. talk about what matters",
   describeValueInputActive: false,
     addDoInputActive: false,
-  doAdded: true, 
-  doList: ["have dinner with tim"],
-  id: nanoid()
+    doAdded: true,
+  doAdding: "",
+    doList: [{ text: "have dinner with tim", doTextActive: false, id: 345 }],
+    id: nanoid()
+  
 },
 {
   name: "health",
@@ -20,6 +22,7 @@ export let doValuesData = [
   describeValueInputActive: false,
   addDoInputActive: false,
   doAdded: false, 
+  doAdding: "",
     doList: [],
   id: nanoid()
   },
@@ -31,7 +34,8 @@ export let doValuesData = [
   describeValueInputActive: false,
   addDoInputActive: false,
   doAdded: true, 
-    doList: ["aaa", "bbb", "ccc"],
+  doAdding: "",
+    doList: [{ text: "have", doTextActive: false, id: 123 }, { text: "dinner", doTextActive: false, id: 234 }],
   id: nanoid()
 }
 ]
