@@ -29,7 +29,7 @@ function App() {
 
   function handleExpandContent(id) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === id ? { ...each, valueExpanded: !each.valueExpanded } : { ...each, valueExpanded: false }
+      return each.id === id ? { ...each, valueExpanded: !each.valueExpanded } : each
     })
     )
   }

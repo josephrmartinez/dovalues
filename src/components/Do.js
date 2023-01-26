@@ -25,6 +25,7 @@ export default function Do(props) {
                         name={props.doId}
                         data-doid={props.doId}
                         data-valueid={props.valueId}
+                        onKeyDown={function (e) { if (e.key === 'Enter') { props.handleEditDoToggle(props.valueId, props.doId) } }}
                         autoFocus
                          />
                     <div className="cb-icons">

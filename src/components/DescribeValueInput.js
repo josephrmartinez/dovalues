@@ -11,6 +11,7 @@ export default function DescribeValueInput(props) {
                     onChange={props.handleDescribeValueInputChange}
                     name={props.valueId}
                     value={props.valueDescription}
+                    onKeyDown={function (e) { if (e.key === 'Enter') { props.handleDescribeValueEnter(props.valueId, props.valueDescription) } }}
                 autoFocus/>
             <div className="cb-icons" onClick={() => props.handleDescribeValueEnter(props.valueId, props.valueDescription)}>
                 <div className="icon-div cb"><FontAwesomeIcon icon={faCheck} size="xs" /></div>
