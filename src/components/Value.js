@@ -16,7 +16,7 @@ import { nanoid } from "nanoid"
 
 
 export default function Value(props) {
-
+    
     const doElements = props.doList.map(each => <Do
         doText={each.text}
         doTextActive={each.doTextActive}

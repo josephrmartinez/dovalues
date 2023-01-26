@@ -1,5 +1,6 @@
-
-- create edit do functionality
-
-
+- bebug edit do functionality
 - create add value screen and functionality
+
+
+Code review:
+- Updating state of nested objects (input text value for do item on edit)

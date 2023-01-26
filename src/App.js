@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Value from './components/Value';
 import AddValue from './components/AddValue';
 import { doValuesData } from './doValuesData';
@@ -13,14 +13,15 @@ function App() {
   function generateNewValueBox() {
     return (
       {
-        name: "faith",
+        name: "balance",
         valueExpanded: false,
-        valueDescribed: true,
+        valueDescribed: false,
+        valueDescription: "",
         describeValueInputActive: false,
-        valueDescription: "jesus, guns, babies.",
-        doAdded: true, 
-        doList: ["praise His glory"],
         addDoInputActive: false,
+        doAdded: true,
+        doAdding: "",
+        doList: [],
         id: nanoid()
       }
     )
@@ -94,19 +95,21 @@ function App() {
     
 
   function handleEditDoInputChange(event) {
-
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === event.target.valueid ? {
+      return each.id === event.target.dataset.valueid ? {
         ...each, doList: each.doList.map(
           doItem => {
-            return doItem.id === event.target.doid ? {
+            return doItem.id === event.target.dataset.doid ? {
               ...doItem, text: event.target.value
             } : doItem
         }
       )} : each
     })
     )
+    
   }
+
+
 
   function handleAddDoEnter(valueId) {
     setDoValues(prevDoValues => prevDoValues.map(each => {

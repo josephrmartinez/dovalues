@@ -20,11 +20,13 @@ export default function Do(props) {
                 <div className="content">
                     <input className="bg-blue-input"
                         type="text"
+                        value={props.doText}
                         onChange={props.handleEditDoInputChange}
                         name={props.doId}
-                        doid={props.doId}
-                        valueid={props.valueId}
-                        value={props.doText} />
+                        data-doid={props.doId}
+                        data-valueid={props.valueId}
+                        autoFocus
+                         />
                     <div className="cb-icons">
                         <div className="icon-div cb" onClick={() => props.handleEditDoToggle(props.valueId, props.doId)}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
                     </div>

@@ -10,7 +10,7 @@ export let doValuesData = [
     addDoInputActive: false,
     doAdded: true,
   doAdding: "",
-    doList: [{ text: "have dinner with tim", doTextActive: false, id: 345 }],
+    doList: [{ text: "have dinner with tim", doTextActive: false, id: "345" }],
     id: nanoid()
   
 },
@@ -35,7 +35,7 @@ export let doValuesData = [
   addDoInputActive: false,
   doAdded: true, 
   doAdding: "",
-    doList: [{ text: "have", doTextActive: false, id: 123 }, { text: "dinner", doTextActive: false, id: 234 }],
+    doList: [{ text: "have", doTextActive: false, id: "123" }, { text: "dinner", doTextActive: false, id: "234" }],
   id: nanoid()
 }
 ]
