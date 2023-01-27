@@ -182,13 +182,19 @@ function App() {
 
 
   return (
-    <>
-      {selectValue && <SelectValue
+  <>
+  {selectValue &&
+  <main>
+    <div className='title'>doValues</div>
+    <div className='container'>
+      <SelectValue
         handleSelectValueInputChange={handleSelectValueInputChange}
         handleSelectValueInputCreate={handleSelectValueInputCreate}
-      />}
-{
-  !selectValue &&
+      />
+    </div>
+  </main>
+  }
+  {!selectValue &&
   <main>
     <div className='title'>doValues</div>
     <div className='container'>
