@@ -1,5 +1,5 @@
-- link up local storage
-- form handling: if input is empty, revert back to prior styling cb-bg-bl
+- form handling for when input is empty
+- prevent input from capitalizing first letter
 
 Code review:
 - Updating state of nested objects (input text value for do item on edit)

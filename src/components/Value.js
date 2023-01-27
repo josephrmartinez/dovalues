@@ -44,11 +44,11 @@ export default function Value(props) {
                 {props.valueDescribed && !props.describeValueInputActive && <ValueDescribed handleDescribeValueButtonClick={props.handleDescribeValueButtonClick} valueDescription={props.valueDescription} />}
 
                 {!props.valueDescribed && !props.describeValueInputActive && <DescribeValue handleDescribeValueButtonClick={props.handleDescribeValueButtonClick} />}
-                {props.describeValueInputActive && <DescribeValueInput valueDescription={props.valueDescription} valueId={props.id} handleDescribeValueEnter={props.handleDescribeValueEnter} handleDescribeValueInputChange={props.handleDescribeValueInputChange} />} 
+                {props.describeValueInputActive && <DescribeValueInput handleDescribeValueButtonClick={props.handleDescribeValueButtonClick} valueDescription={props.valueDescription} valueId={props.id} handleDescribeValueEnter={props.handleDescribeValueEnter} handleDescribeValueInputChange={props.handleDescribeValueInputChange} />} 
                 
 
                 {props.doAdded && doElements}
-                {props.addDoInputActive && <AddDoInput valueId={props.id} doAdding={props.doAdding} handleAddDoInputChange={props.handleAddDoInputChange} handleAddDoEnter={props.handleAddDoEnter} />}
+                {props.addDoInputActive && <AddDoInput handleAddDoButtonClick={props.handleAddDoButtonClick} valueId={props.id} doAdding={props.doAdding} handleAddDoInputChange={props.handleAddDoInputChange} handleAddDoEnter={props.handleAddDoEnter} />}
                 {!props.addDoInputActive && <AddDoButton handleAddDoButtonClick={props.handleAddDoButtonClick} />}
             </div>}
         </>
