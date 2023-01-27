@@ -4,28 +4,15 @@ import Value from './components/Value';
 import AddValue from './components/AddValue';
 import { doValuesData } from './doValuesData';
 import { nanoid } from 'nanoid';
+import SelectValue from './components/SelectValue';
 
 
 function App() {
   const [doValues, setDoValues] = useState(doValuesData)
+  const [selectValue, setSelectValue] = useState(false)
 
 
-  function generateNewValueBox() {
-    return (
-      {
-        name: "balance",
-        valueExpanded: false,
-        valueDescribed: false,
-        valueDescription: "",
-        describeValueInputActive: false,
-        addDoInputActive: false,
-        doAdded: true,
-        doAdding: "",
-        doList: [],
-        id: nanoid()
-      }
-    )
-  }
+  
 
   function handleExpandContent(id) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
@@ -50,7 +37,7 @@ function App() {
 
   function handleAddDoButtonClick(valueId) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === valueId ? { ...each, addDoInputActive: !each.addDoInputActive, describeValueInputActive: false} : each
+      return each.id === valueId ? { ...each, addDoInputActive: !each.addDoInputActive, describeValueInputActive: false } : each
     })
     )
   }
@@ -59,21 +46,21 @@ function App() {
 
   function handleDescribeValueButtonClick(valueId) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive, addDoInputActive: false} : each
+      return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive, addDoInputActive: false } : each
     })
     )
   }
 
   function handleDescribeValueEnter(valueId, inputText) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive, valueDescribed: true} : each
+      return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive, valueDescribed: true } : each
     })
     )
   }
 
   function handleDescribeValueInputChange(event) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === event.target.name ? { ...each, valueDescription: event.target.value} : each
+      return each.id === event.target.name ? { ...each, valueDescription: event.target.value } : each
     })
     )
   }
@@ -87,8 +74,9 @@ function App() {
             return doItem.id === doId ? {
               ...doItem, doTextActive: !doItem.doTextActive
             } : doItem
-        }
-      )} : each
+          }
+        )
+      } : each
     })
     )
   }
@@ -102,8 +90,9 @@ function App() {
             return doItem.id === event.target.dataset.doid ? {
               ...doItem, text: event.target.value
             } : doItem
-        }
-      )} : each
+          }
+        )
+      } : each
     })
     )
     
@@ -124,18 +113,46 @@ function App() {
 
   function handleAddDoInputChange(event) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
-      return each.id === event.target.name ? { ...each, doAdding: event.target.value} : each
+      return each.id === event.target.name ? { ...each, doAdding: event.target.value } : each
     })
     )
   }
 
   function handleAddValueClick() {
-    setDoValues(prevDoValues => {
-      return [...prevDoValues, generateNewValueBox()]
-    })
+    setSelectValue(true)
   }
 
-  
+  function handleSelectValueInputCreate(value) {
+    setDoValues(prevDoValues => {
+      return [...prevDoValues, generateNewValueBox(value)]
+    })
+    setSelectValue(false)
+  }
+
+  function handleSelectValueInputChange(selectedOption) {
+    setDoValues(prevDoValues => {
+      return [...prevDoValues, generateNewValueBox(selectedOption.value)]
+    })
+    setSelectValue(false)
+  }
+
+  function generateNewValueBox(value) {
+    return (
+      {
+        name: value,
+        valueExpanded: false,
+        valueDescribed: false,
+        valueDescription: "",
+        describeValueInputActive: false,
+        addDoInputActive: false,
+        doAdded: true,
+        doAdding: "",
+        doList: [],
+        id: nanoid()
+      }
+    )
+  }
+
 
   const valueElements = doValues.map(each => <Value
     name={each.name}
@@ -156,7 +173,7 @@ function App() {
     handleEditDoInputChange={handleEditDoInputChange}
     handleDescribeValueButtonClick={() => handleDescribeValueButtonClick(each.id)}
     handleDescribeValueEnter={handleDescribeValueEnter}
-    handleDescribeValueInputChange = {handleDescribeValueInputChange}
+    handleDescribeValueInputChange={handleDescribeValueInputChange}
     id={each.id}
     key={each.id}
     doAdding={each.doAdding}
@@ -165,13 +182,22 @@ function App() {
 
 
   return (
-    <main>
-      <div className='title'>doValues</div>
-      <div className='container'>
-        {valueElements}
-        <AddValue handleAddValueClick={handleAddValueClick} />
-      </div>
-    </main>
+    <>
+      {selectValue && <SelectValue
+        handleSelectValueInputChange={handleSelectValueInputChange}
+        handleSelectValueInputCreate={handleSelectValueInputCreate}
+      />}
+{
+  !selectValue &&
+  <main>
+    <div className='title'>doValues</div>
+    <div className='container'>
+      {valueElements}
+      <AddValue handleAddValueClick={handleAddValueClick} />
+    </div>
+  </main>
+  }
+  </>
   );
 }
 

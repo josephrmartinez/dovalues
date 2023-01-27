@@ -182,3 +182,18 @@ main{
 .bg-blue-input:focus{
   outline: 1.75px solid var(--main-wht-color)
 }
+
+.selectValue-page{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.selectValue-container{
+width: 280px;
+}

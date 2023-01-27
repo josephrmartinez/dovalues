@@ -1,4 +1,3 @@
-- update input fields to have enterClick functionality
 - create add value screen and functionality
 - update child boxes to have minheight property: resize when text is long
 - link up local storage
