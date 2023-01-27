@@ -1,5 +1,5 @@
 - link up local storage
-- form handling: prevent submitting empty strings for input boxes
+- form handling: if input is empty, revert back to prior styling cb-bg-bl
 
 Code review:
 - Updating state of nested objects (input text value for do item on edit)

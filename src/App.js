@@ -8,11 +8,15 @@ import SelectValue from './components/SelectValue';
 
 
 function App() {
-  const [doValues, setDoValues] = useState(doValuesData)
+  const [doValues, setDoValues] = useState( 
+    JSON.parse(localStorage.getItem("doValuesLocalData"))|| doValuesData)
   const [selectValue, setSelectValue] = useState(false)
 
 
-  
+  useEffect(() => {
+    localStorage.setItem("doValuesLocalData", JSON.stringify(doValues))
+  }, [doValues])
+
 
   function handleExpandContent(id) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
@@ -22,7 +26,6 @@ function App() {
   }
 
   
-
   function handleDeleteDo(valueName, doText) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
       return each.name === valueName ? { ...each, doList: each.doList.filter(doItem => doItem.text !== doText) } : each
@@ -41,8 +44,6 @@ function App() {
     })
     )
   }
-
-  
 
   function handleDescribeValueButtonClick(valueId) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
@@ -65,7 +66,6 @@ function App() {
     )
   }
 
-
   function handleEditDoToggle(valueId, doId) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
       return each.id === valueId ? {
@@ -80,7 +80,6 @@ function App() {
     })
     )
   }
-    
 
   function handleEditDoInputChange(event) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
@@ -97,8 +96,6 @@ function App() {
     )
     
   }
-
-
 
   function handleAddDoEnter(valueId) {
     setDoValues(prevDoValues => prevDoValues.map(each => {
@@ -153,7 +150,6 @@ function App() {
     )
   }
 
-
   const valueElements = doValues.map(each => <Value
     name={each.name}
     valueExpanded={each.valueExpanded}
@@ -179,7 +175,6 @@ function App() {
     doAdding={each.doAdding}
   />
   )
-
 
   return (
   <>
