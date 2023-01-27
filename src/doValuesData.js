@@ -5,7 +5,7 @@ export let doValuesData = [
   name: "connection",
   valueExpanded: true,
   valueDescribed: true,
-  valueDescription: "spend quality time with loved ones. talk about what matters",
+  valueDescription: "spend quality time with loved ones. talk about what matters.",
   describeValueInputActive: false,
     addDoInputActive: false,
     doAdded: true,
@@ -33,9 +33,9 @@ export let doValuesData = [
   valueDescription: "",
   describeValueInputActive: false,
   addDoInputActive: false,
-  doAdded: true, 
+  doAdded: false, 
   doAdding: "",
-    doList: [{ text: "have", doTextActive: false, id: "123" }, { text: "dinner", doTextActive: false, id: "234" }],
+    doList: [],
   id: nanoid()
 }
 ]
