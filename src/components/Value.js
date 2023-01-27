@@ -34,8 +34,8 @@ export default function Value(props) {
             <div className="value-box-content">
                 <span className="value-box-text">{props.name}</span>
                 <div className="value-box-icons">
-                    <div className="icon-div value-box" onClick={props.handleDeleteValue}><FontAwesomeIcon icon={faXmark} size="xs"/></div>
-                    <div className="icon-div value-box" onClick={props.handleExpandContent}><FontAwesomeIcon icon={props.valueExpanded ? faAngleUp : faAngleDown} size="xs"/></div>
+                    <div className="icon-div-value-box" onClick={props.handleDeleteValue}><FontAwesomeIcon icon={faXmark} size="xs"/></div>
+                    <div className="icon-div-value-box" onClick={props.handleExpandContent}><FontAwesomeIcon icon={props.valueExpanded ? faAngleUp : faAngleDown} size="xs"/></div>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ export default function AddDoInput(props) {
                     onKeyDown={function (e) { if (e.key === 'Enter') { props.handleAddDoEnter(props.valueId) } }}
                 autoFocus/>
             <div className="cb-icons">
-                <div className="icon-div cb" onClick={() => props.handleAddDoEnter(props.valueId)}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
+                <div className="icon-div-cb" onClick={() => props.handleAddDoEnter(props.valueId)}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
             </div>
         </div>
     </div>    

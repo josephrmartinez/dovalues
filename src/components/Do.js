@@ -11,8 +11,8 @@ export default function Do(props) {
                 <div className="content">
                     <span className="do-text">{props.doText}</span>
                     <div className="cb-icons">
-                        <div className="icon-div cb" onClick={() => props.handleEditDoToggle(props.valueId, props.doId)}><FontAwesomeIcon icon={faPen} size="xs" /></div>
-                        <div className="icon-div cb" onClick={props.handleDeleteDo}><FontAwesomeIcon icon={faXmark} size="xs" /></div>
+                        <div className="icon-div-cb" onClick={() => props.handleEditDoToggle(props.valueId, props.doId)}><FontAwesomeIcon icon={faPen} size="xs" /></div>
+                        <div className="icon-div-cb" onClick={props.handleDeleteDo}><FontAwesomeIcon icon={faXmark} size="xs" /></div>
                     </div>
                 </div>
             </div>}
@@ -29,7 +29,7 @@ export default function Do(props) {
                         autoFocus
                          />
                     <div className="cb-icons">
-                        <div className="icon-div cb" onClick={() => props.handleEditDoToggle(props.valueId, props.doId)}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
+                        <div className="icon-div-cb" onClick={() => props.handleEditDoToggle(props.valueId, props.doId)}><FontAwesomeIcon icon={faCheck} size="xs" /></div>
                     </div>
                 </div>
             </div>}
