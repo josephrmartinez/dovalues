@@ -222,3 +222,15 @@ main{
 .selectValue-container{
 width: 280px;
 }
+
+.footer{
+  position: absolute;
+  top: 90vh;
+  color: var(--main-wht-color);
+  font-family: 'GFS Neohellenic', sans-serif;
+  opacity: .8;
+}
+
+.footer>a{
+  color: var(--main-wht-color);
+}

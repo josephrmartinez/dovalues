@@ -188,7 +188,8 @@ function App() {
         handleSelectValueInputChange={handleSelectValueInputChange}
         handleSelectValueInputCreate={handleSelectValueInputCreate}
       />
-    </div>
+      </div>
+      <div className="footer">site created by <a href="https://josephm.dev/">josephm.dev</a></div>
   </main>
   }
   {!selectValue &&
