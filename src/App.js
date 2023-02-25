@@ -7,6 +7,11 @@ import { nanoid } from 'nanoid';
 import SelectValue from './components/SelectValue';
 
 
+import { initializeApp } from 'firebase/app';
+import { getAnalytics, logEvent } from "firebase/analytics";
+
+
+
 function App() {
   const [doValues, setDoValues] = useState( 
     JSON.parse(localStorage.getItem("doValuesLocalData"))|| doValuesData)
@@ -151,6 +156,24 @@ function App() {
       }
     )
   }
+
+
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBxka5AS7Ofny2P2JXuQY-uZVOUp-VqvME",
+    authDomain: "dovalues-e6672.firebaseapp.com",
+    projectId: "dovalues-e6672",
+    storageBucket: "dovalues-e6672.appspot.com",
+    messagingSenderId: "640558670257",
+    appId: "1:640558670257:web:e8e875a3be4aba6b11dd90",
+    measurementId: "G-ZD1ERCELBX"
+  };
+
+  // Initialize Firebase
+  const firebaseApp = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(firebaseApp);
+
+  logEvent(analytics, "analytics_logged")
 
   const valueElements = doValues.map(each => <Value
     name={each.name}
