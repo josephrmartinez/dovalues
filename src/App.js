@@ -59,7 +59,6 @@ function App() {
 
   function handleDescribeValueEnter(valueId, inputText) {
     let inputValue = doValues.filter(each => each.id === valueId)
-    console.log(inputValue.valueDescription)
     setDoValues(prevDoValues => prevDoValues.map(each => {
       return each.id === valueId ? { ...each, describeValueInputActive: !each.describeValueInputActive, valueDescribed: true } : each
     })
