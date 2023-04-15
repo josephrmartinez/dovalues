@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&family=Inter&family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
-  /* font-family: 'GFS Neohellenic',sans-serif;
-  font-family: 'Lemon', cursive; */
 
 :root{
   --main-bg-color: #2C6889;
   --main-wht-color: #F8F8F8;
+  --sans-font: 'Open Sans',sans-serif;
 }
 
 html{
@@ -54,9 +54,9 @@ main{
 
 .value-box-content{
   color: var(--main-bg-color);
-  font-family: 'GFS Neohellenic', sans-serif;
-  font-size: 2em;
-  font-weight: bold;
+  font-family: var(--sans-font);
+  font-size: 1.5em;
+  font-weight: 600;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -75,15 +75,6 @@ main{
   align-content: center;
 }
 
-
-/* .icon-div{
-  background-color: var(--main-wht-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-} */
 
 .icon-div-value-box{
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
@@ -116,10 +107,11 @@ main{
 
 
 .add-value-text{
-  font-family: 'GFS Neohellenic', sans-serif;
-  font-size: 1.5em;
+  font-family: var(--sans-font);
+  font-size: 1em;
   margin: 1em;
   color: var(--main-wht-color);
+  opacity: .8;
   cursor: pointer;
   user-select: none;
   text-align: center;
@@ -152,9 +144,9 @@ main{
 .cb.bg-blue{
   background: var(--main-bg-color);
   border: 1px solid var(--main-wht-color);
-  font-family: 'GFS Neohellenic', sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  font-family: var(--sans-font);
+  font-size: .9em;
+  font-weight: 500;
   color: var(--main-wht-color);
   cursor: pointer;
 }
@@ -171,10 +163,10 @@ main{
 }
 
 .do-text{
-  color: black;
-  font-family: 'GFS Neohellenic', sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  color: rgb(46, 46, 46);
+  font-family: var(--sans-font);
+  font-size: .8em;
+  font-weight: 500;
   margin: 1em 0em;
   margin-right: 10px;
   line-height: 95%;
@@ -182,8 +174,9 @@ main{
 
 .value-description{
   color: var(--main-bg-color);
-  font-family: 'Lemon', cursive;
-  font-size: .6em;
+  font-family: var(--sans-font);
+  font-size: .8em;
+  font-weight: 500;
   margin: 1em 0em;
   margin-right: 10px;
   
@@ -200,9 +193,9 @@ main{
   background-color: var(--main-bg-color);
   height: 2em;
   color: var(--main-wht-color);
-  font-family: 'GFS Neohellenic', sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  font-family: var(--sans-font);
+  font-size: .9em;
+  font-weight: 500;
 }
 
 .bg-blue-input:focus{
@@ -227,7 +220,7 @@ width: 280px;
   position: absolute;
   top: 90vh;
   color: var(--main-wht-color);
-  font-family: 'GFS Neohellenic', sans-serif;
+  font-family: var(--sans-font);
   opacity: .8;
 }
 
