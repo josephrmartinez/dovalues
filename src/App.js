@@ -204,19 +204,19 @@ function App() {
   <>
   {selectValue &&
   <main>
-    <div className='title'>doValues</div>
+    <div className='title'>do values</div>
     <div className='container'>
       <SelectValue
         handleSelectValueInputChange={handleSelectValueInputChange}
         handleSelectValueInputCreate={handleSelectValueInputCreate}
       />
       </div>
-      <div className="footer">site created by <a href="https://josephm.dev/">josephm.dev</a></div>
+      <div className="footer">site built by <a href="https://josephm.dev/" target='_blank'>josephm.dev</a></div>
   </main>
   }
   {!selectValue &&
   <main>
-    <div className='title'>doValues</div>
+    <div className='title'>do values</div>
     <div className='container'>
       {valueElements}
       <AddValue handleAddValueClick={handleAddValueClick} />
